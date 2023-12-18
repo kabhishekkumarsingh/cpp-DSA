@@ -1,0 +1,54 @@
+
+#include <iostream>
+#define size 10
+int stack[size],top=-1;
+using namespace std;
+
+void push(){
+    int n;
+    if(top==size-1) cout<<"Stack is full.\n\n";
+    else{
+        cout<<"Enter element to push in stack: ";
+        cin>>n;
+        top++;
+        stack[top]=n;
+        cout<<n<<" is pushed in stack\n\n";
+    }
+}
+void pop(){
+    if(top==-1) cout<<"Stack is empty  enter element first\n\n";
+    else{
+        cout<<"poped element is "<<stack[top]<<"\n\n";
+        top--;
+    }
+}
+void display(){
+    if(top==-1) cout<<"Stack is empty enter element first\n\n";
+    else{
+        cout<<"\nStack elements\n";
+        for(int i=top;i>=0;i--){
+            cout<<stack[i]<<endl;
+        }
+    }
+}
+
+
+int main()
+{
+    int choice;
+do{
+    cout<<"\n1. Push\n2. Pop\n3. Display\n4. Exit\n"; 
+    cout<<"Enter your choice:";
+    cin>>choice;
+
+    switch(choice){
+        case 1: push(); break;
+        case 2: pop(); break;
+       case 3: display(); break;
+        case 4: exit(4);
+        default: cout<<"You are selected wrong choice plese try again.\n";
+    }
+    
+}while(choice!=4);
+    return 0;
+}
